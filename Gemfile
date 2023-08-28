@@ -17,9 +17,11 @@ gem "bootsnap", require: false
 
 gem "devise", "~> 4.2"
 
+gem 'devise-security', "~> 0.18"
+
 group :development, :test do
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'rspec-rails', '~> 6.0.0'
+  gem 'pry', '~> 0.14.2'
 end
 
 group :development do
