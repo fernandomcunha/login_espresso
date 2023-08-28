@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddOldPasswordsTable < ActiveRecord::Migration[7.0]
   def change
     create_table :old_passwords do |t|
@@ -7,6 +9,6 @@ class AddOldPasswordsTable < ActiveRecord::Migration[7.0]
       t.string :password_salt
       t.datetime :created_at
     end
-    add_index :old_passwords, [:password_archivable_type, :password_archivable_id], name: 'index_password_archivable'
+    add_index :old_passwords, %i[password_archivable_type password_archivable_id], name: 'index_password_archivable'
   end
 end

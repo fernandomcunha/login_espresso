@@ -1,20 +1,22 @@
 # frozen_string_literal: true
 
-class Users::RegistrationsController < Devise::RegistrationsController
-  prepend_before_action :check_captcha, only: [:create]
+module Users
+  class RegistrationsController < Devise::RegistrationsController
+    prepend_before_action :check_captcha, only: [:create]
 
-  private
+    private
 
-  def check_captcha
-    return if verify_recaptcha
+    def check_captcha
+      return if verify_recaptcha
 
-    self.resource = resource_class.new sign_up_params
-    resource.validate
-    set_minimum_password_length
+      self.resource = resource_class.new sign_up_params
+      resource.validate
+      set_minimum_password_length
 
-    respond_with_navigational(resource) do
-      flash.discard(:recaptcha_error)
-      render :new
+      respond_with_navigational(resource) do
+        flash.discard(:recaptcha_error)
+        render :new
+      end
     end
   end
 end
