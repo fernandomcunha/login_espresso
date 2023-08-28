@@ -21,6 +21,8 @@
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
+  <%= flash[:recaptcha_error] %>
+  <%= recaptcha_tags %>
 <% end %>
 
 <%= render "devise/shared/links" %>

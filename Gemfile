@@ -19,6 +19,8 @@ gem "devise", "~> 4.2"
 
 gem 'devise-security', "~> 0.18"
 
+gem "recaptcha", "~> 5.15"
+
 group :development, :test do
   gem 'rspec-rails', '~> 6.0.0'
   gem 'pry', '~> 0.14.2'

@@ -168,6 +168,7 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    recaptcha (5.15.0)
     regexp_parser (2.8.1)
     responders (3.1.0)
       actionpack (>= 5.2)
@@ -243,6 +244,7 @@ DEPENDENCIES
   pry (~> 0.14.2)
   puma (~> 5.0)
   rails (~> 7.0.7, >= 7.0.7.2)
+  recaptcha (~> 5.15)
   rspec-rails (~> 6.0.0)
   selenium-webdriver
   simplecov
