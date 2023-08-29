@@ -27,6 +27,10 @@ gem 'devise-two-factor', '~> 5.0.0'
 
 gem 'rqrcode', '~> 2.2.0'
 
+gem 'bootstrap', '~> 5.3.1'
+
+gem 'sassc-rails', '~> 2.1.2'
+
 group :development, :test do
   gem 'dotenv-rails', '~> 2.8.1'
   gem 'pry', '~> 0.14.2'
