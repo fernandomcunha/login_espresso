@@ -23,7 +23,12 @@ gem 'devise-security', '~> 0.18'
 
 gem 'recaptcha', '~> 5.15'
 
+gem 'devise-two-factor', '~> 5.0.0'
+
+gem 'rqrcode', '~> 2.2.0'
+
 group :development, :test do
+  gem 'dotenv-rails', '~> 2.8.1'
   gem 'pry', '~> 0.14.2'
   gem 'rspec-rails', '~> 6.0.0'
   gem 'rubocop', '~> 1.56', require: false
