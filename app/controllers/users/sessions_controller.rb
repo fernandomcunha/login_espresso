@@ -12,6 +12,7 @@ module Users
 
     private
 
+    # :nocov:
     def check_captcha
       return if verify_recaptcha
 
@@ -22,5 +23,6 @@ module Users
         render :new
       end
     end
+    # :nocov:
   end
 end

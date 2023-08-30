@@ -33,6 +33,7 @@ gem 'sassc-rails', '~> 2.1.2'
 
 group :development, :test do
   gem 'dotenv-rails', '~> 2.8.1'
+  gem 'factory_bot_rails', '~> 6.2.0'
   gem 'pry', '~> 0.14.2'
   gem 'rspec-rails', '~> 6.0.0'
   gem 'rubocop', '~> 1.56', require: false

@@ -22,6 +22,7 @@
           </p>
         </div>
       </div>
+      <br />
       <div class="card">
         <div class="card-header">
           2. Confirm OTP Code
@@ -29,6 +30,7 @@
         <div class="card-body">
           <p>Please confirm that your authentication application is working by entering a generated code below.</p>
           <%= form_for(:two_fa, url: two_factor_settings_path, method: :post) do |f| %>
+            <%= render 'layouts/flash' %>
             <div class="form-group">
               <%= f.label :code %>
               <%= f.text_field :code, class: 'form-control' %>

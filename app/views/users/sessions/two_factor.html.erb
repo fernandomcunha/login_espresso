@@ -5,6 +5,8 @@
 </div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), method: :post) do |f| %>
+  <%= render 'layouts/flash' %>
+
   <div class="form-group">
     <%= f.label :otp_attempt %>
     <%= f.text_field :otp_attempt, class: 'form-control' %>

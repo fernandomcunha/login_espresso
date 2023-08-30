@@ -11,7 +11,10 @@ class TwoFactorSettingsController < ApplicationController
   end
 
   def create
-    validate_user_password
+    unless current_user.valid_password?(enable_2fa_params[:password])
+      flash.now[:alert] = 'Incorrect password'
+      return render :new
+    end
 
     if current_user.validate_and_consume_otp!(enable_2fa_params[:code])
       current_user.enable_two_factor!
@@ -53,12 +56,5 @@ class TwoFactorSettingsController < ApplicationController
 
   def enable_2fa_params
     params.require(:two_fa).permit(:code, :password)
-  end
-
-  def validate_user_password
-    return if current_user.valid_password?(enable_2fa_params[:password])
-
-    flash.now[:alert] = 'Incorrect password'
-    render :new
   end
 end
