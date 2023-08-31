@@ -4,6 +4,9 @@ require_relative 'boot'
 
 require 'rails/all'
 
+require 'dotenv'
+Dotenv.load('.env')
+
 Bundler.require(*Rails.groups)
 
 module LoginEspresso

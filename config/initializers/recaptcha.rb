@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 Recaptcha.configure do |config|
-  config.site_key = '6LeEuOAnAAAAAPMYHr44xTRjSg1v013Bov2ByeBI'
-  config.secret_key = '6LeEuOAnAAAAAJ7m8ArXC4uDyasbSso81_YAv2Qy'
+  config.site_key = ENV.fetch('RECAPTCHA_SITE_KEY', nil)
+  config.secret_key = ENV.fetch('RECAPTCHA_SECRET_KEY', nil)
 end
