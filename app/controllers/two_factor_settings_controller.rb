@@ -17,10 +17,7 @@ class TwoFactorSettingsController < ApplicationController
     end
 
     if current_user.validate_and_consume_otp!(enable_2fa_params[:code])
-      current_user.enable_two_factor!
-
-      flash[:notice] = 'Successfully enabled two factor authentication, please make note of your backup codes.'
-      redirect_to edit_two_factor_settings_path
+      enable_user_two_factor!
     else
       flash.now[:alert] = 'Incorrect Code'
       render :new
@@ -56,5 +53,12 @@ class TwoFactorSettingsController < ApplicationController
 
   def enable_2fa_params
     params.require(:two_fa).permit(:code, :password)
+  end
+
+  def enable_user_two_factor!
+    current_user.enable_two_factor!
+
+    flash[:notice] = 'Successfully enabled two factor authentication, please make note of your backup codes.'
+    redirect_to edit_two_factor_settings_path
   end
 end

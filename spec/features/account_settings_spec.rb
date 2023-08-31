@@ -42,7 +42,7 @@ feature 'User can view account settings' do
       expect(page).to have_field('Code')
       expect(page).to have_field('Password')
 
-      fill_in 'Code', with: 6.times.map{rand(6)}.join
+      fill_in 'Code', with: 6.times.map { rand(6) }.join
       fill_in 'Password', with: 'A1b2c3d4e5f6.'
       click_button 'Confirm and Enable Two Factor'
 

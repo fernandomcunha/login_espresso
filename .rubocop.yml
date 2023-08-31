@@ -17,3 +17,8 @@ Metrics/MethodLength:
 Metrics/BlockLength:
   Exclude:
     - 'db/**/*'
+    - 'config/**/*'
+    - 'spec/**/*'
+
+Metrics/AbcSize:
+  Max: 20
