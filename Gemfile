@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github) { |_repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.4'
 
@@ -30,6 +30,12 @@ gem 'rqrcode', '~> 2.2.0'
 gem 'bootstrap', '~> 5.3.1'
 
 gem 'sassc-rails', '~> 2.1.2'
+
+gem 'turbo-rails'
+
+gem 'stimulus-rails'
+
+gem 'importmap-rails'
 
 group :development, :test do
   gem 'dotenv-rails', '~> 2.8.1'
